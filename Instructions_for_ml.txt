@@ -35,6 +35,8 @@ How to run succesfull machine learning V1.0 (#rahul)
 	
 	python3 legacy/train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
 
+protobuf error solve
+https://gist.github.com/diegopacheco/cd795d36e6ebcd2537cd18174865887b
 
 
 Error and resolve
