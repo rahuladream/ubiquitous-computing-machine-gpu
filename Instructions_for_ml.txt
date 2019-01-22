@@ -1,0 +1,40 @@
+How to run succesfull machine learning V1.0 (#rahul)
+
+
+0. Creating XML to CSV vs CSV to tfrecord
+	
+	i. Run code xml_to_csv.py - it will create test_labels.csv vs train_labels.csv
+	
+	ii. Run generate_tfrecord.py to create train.record and test.record
+	    python3 generate_tfrecord.py --csv_input=data/train_labels.csv --output_path=data/train.record --image_dir=images/
+
+           python3 generate_tfrecord.py --csv_input=data/test_labels.csv --output_path=data/test.record --image_dir=images/
+		
+
+1. Create enviorment
+	install tensorflow or tensorflow-gpu (according to compatibility)
+	
+	#Install these three main packages
+	 sudo apt-get install protobuf-compiler python-pil python-lxml
+	 sudo pip install jupyter
+	 sudo pip install matplotlib
+
+2. Now download the official repo of github model
+	
+	i. https://github.com/tensorflow/models.git
+
+	ii. extract the folder
+	
+	iii. (cd models) Go to model folder export the python libraries
+	export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+	
+	iv. (cd object_detection) export the protobuf compiler used for serializing structured data.
+	protoc object_detection/protos/*.proto --python_out=.
+
+3. Run the following command when you done system working fine
+	
+	python3 legacy/train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_pets.config
+
+
+
+Error and resolve
