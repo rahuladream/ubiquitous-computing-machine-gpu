@@ -34,8 +34,8 @@ source ~/.bashrc
 sudo apt install unzip -y
 
 
-# Install jupyter notebook
-sudo apt -y upgrade --force-yes
+# # Install jupyter notebook
+# sudo apt -y upgrade --force-yes
 sudo apt -y autoremove
 jupyter notebook --generate-config
 echo "c.NotebookApp.ip = '0.0.0.0'" >> ~/.jupyter/jupyter_notebook_config.py
